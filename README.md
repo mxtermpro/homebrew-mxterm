@@ -12,8 +12,10 @@ This repository only hosts the Homebrew cask. For the app, guides, releases and 
 ## Install
 
 ```sh
-brew install --cask mxtermpro/mxterm/mxterm-pro
+brew trust mxtermpro/mxterm && brew install --cask mxtermpro/mxterm/mxterm-pro
 ```
+
+`brew trust` adds the tap and clears Homebrew's one-time check for third-party taps, so this one line taps and installs MXterm Pro without a `Refusing to load cask ... from untrusted tap` error.
 
 The app is signed with an Apple Developer ID and notarized by Apple. MXterm Pro updates itself from inside the app.
 
