@@ -4,8 +4,8 @@ cask "mxterm-pro" do
   # them. The app is also Developer ID signed and notarized (Gatekeeper checks it at launch). `version`
   # follows the app's own update manifest (latest.json); installed copies update themselves from inside
   # the app (auto_updates true), so this cask only gates the first `brew install`.
-  version "1.1.78"
-  sha256 "aeb0d9b978e11dd073846d954d7f6b467bdd67530ae62f3da6a5eb1cce47c1b1"
+  version "1.1.79"
+  sha256 "444a3ea6764f654d5a730260a2b011c6f22d57d7a834250a052ba88323ad4c84"
 
   url "https://mxterm.net/download/MXterm-Pro_#{version}_universal.dmg"
   name "MXterm Pro"
