@@ -1,15 +1,13 @@
 cask "mxterm-pro" do
-  # MXterm Pro ships one always-latest DMG (replaced server-side on each release), so the
-  # download URL is not versioned and Homebrew needs `sha256 :no_check` (a pinned sha would
-  # break the moment a release replaces the file). Integrity is still checked at launch by
-  # macOS Gatekeeper: the app is Developer ID signed and notarized. `version` follows the
-  # app's own update manifest (latest.json) for display and livecheck; installed copies
-  # update themselves from inside the app (auto_updates true), so this cask only gates the
-  # first `brew install`. Bump `version` on each release: ./bump-version.sh
-  version "1.1.73"
-  sha256 :no_check
+  # The DMG is pinned: every release also publishes `MXterm-Pro_<version>_universal.dmg` and its `.sha256`
+  # beside the always-latest `mxTerm.dmg`, and ./bump-version.sh sets `version` and `sha256` together from
+  # them. The app is also Developer ID signed and notarized (Gatekeeper checks it at launch). `version`
+  # follows the app's own update manifest (latest.json); installed copies update themselves from inside
+  # the app (auto_updates true), so this cask only gates the first `brew install`.
+  version "1.1.78"
+  sha256 "aeb0d9b978e11dd073846d954d7f6b467bdd67530ae62f3da6a5eb1cce47c1b1"
 
-  url "https://mxterm.net/download/mxTerm.dmg"
+  url "https://mxterm.net/download/MXterm-Pro_#{version}_universal.dmg"
   name "MXterm Pro"
   desc "Terminal for AI coding agents, SSH and SFTP"
   homepage "https://mxterm.net/"
